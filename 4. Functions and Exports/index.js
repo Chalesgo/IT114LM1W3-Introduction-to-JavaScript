@@ -7,17 +7,40 @@
 
 // Todo 4.1 Declare a function named 'greet' that takes one parameter 'name' and displays a greeting
 // Then, Call the 'greet' function with your name as the argument
-// Your code here
+function greet(name) {
+    console.log(`Hello, ${name}!`);
+}
+
+greet("Charles");
 
 // Checkpoint 4.1 What is the difference between a function declaration and a function expression?
-// Answer: 
+// Answer: A function declaration is hoisted and can be called before its declaration, while a function expression must be declared before it is called
 
 // Todo 4.2 Declare a function expression named 'calculateArea' that takes the length and width of a rectangle and returns its area
 // Then, Call the 'calculateArea' function with any length and width as arguments
-// Your code here
+const calculateArea = function(length, width) {
+    return length * width;
+};
+
+const rectangleLength = 5;
+const rectangleWidth = 8;
+const area = calculateArea(rectangleLength, rectangleWidth);
+
+console.log("The area of the rectangle is:", area);
 
 // Checkpoint 4.2 What is a callback function? Provide an example.
-// Answer: 
+// Answer: A callback function is a function passed as an argument to another function and is executed after the completion of a particular task
+// Example:
+function greet(name, callback) {
+    console.log("Hello, " + name + "!");
+    callback();
+}
+
+function sayGoodbye() {
+    console.log("Goodbye!");
+}
+
+greet("Alice", sayGoodbye);
 
 // Todo 4.3 Declare a higher-order function named 'modifyArray' that takes an array and a function as parameters. The function should modify each element in the array using the provided function and return the modified array.
 // Then, Call the 'modifyArray' function with the 'numbers' array and a function that increments each number by 1
