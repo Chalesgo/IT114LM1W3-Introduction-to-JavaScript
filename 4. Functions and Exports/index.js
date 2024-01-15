@@ -45,18 +45,40 @@ greet("Alice", sayGoodbye);
 // Todo 4.3 Declare a higher-order function named 'modifyArray' that takes an array and a function as parameters. The function should modify each element in the array using the provided function and return the modified array.
 // Then, Call the 'modifyArray' function with the 'numbers' array and a function that increments each number by 1
 // Useful Tutorial: https://youtu.be/H4awPsyugS0?si=7wC1B7whXVkG8X5l
-// Your code here
+function modifyArray(arr, modifyFunction) {
+    return arr.map(modifyFunction);
+}
+
+const numbers = [1, 2, 3, 4, 5];
+const modifiedNumbers = modifyArray(numbers, function (number) {
+    return number + 1;
+});
+
+console.log("Original Numbers:", numbers);
+console.log("Modified Numbers:", modifiedNumbers);
+
 
 // Todo 4.4 See mathUtils.js for the instructions to create the add method and PI constant.
 // Then, import and call the add method here and display the value of the PI constant
 // Useful Tutorial: https://youtu.be/qgRUr-YUk1Q?si=ceAaeHJfCYCmeNWx
-// Your code here
+import { add, PI } from './mathUtils';
+
+//const result = add(5, 7);
+console.log("Result of adding 5 and 7:", add);
+
+console.log("Value of PI:", PI);
 
 // Todo 4.5 See isPalindrome.js for the instructions to create the isPalindrome method.
 // Then, import and call the isPalindrome method here
 // Useful Tutorial: https://youtu.be/qgRUr-YUk1Q?si=ceAaeHJfCYCmeNWx
-// Your code here
+import isPalindrome from './isPalindrome';
+
+const word1 = "A man, a plan, a canal: Panama";
+const word2 = "hello";
+
+console.log(`${word1} is a palindrome: ${isPalindrome(word1)}`);
+console.log(`${word2} is a palindrome: ${isPalindrome(word2)}`);
 
 // Checkpoint 4.3 What does the require function and module.exports variable do?
 // Should we use it over the import and export keywords? Why? Research your answer.
-// Answer: 
+// Answer: Require and module.exports are used in CommonJS to import modules and export values, no we shouldn't since all data researched indicates import and export are better
